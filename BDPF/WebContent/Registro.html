@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<link href="https://framework-gb.cdn.gob.mx/favicon.ico" rel="shortcut icon">
+    <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Clasificador de contenidos</title>
+</head>
+<body>
+<main class="page">
+		<div class="container">
+			<div class= "row">
+				<div class="col-md-12">
+					<ol class="breadcrumb">
+						<li><a href="https://www.gob.mx/"><i class="icon icon-home"></i></a></li>
+						<li><a href="#">CONAPASE</a></li>
+						<li class="active">Cuestionario</li>
+					</ol>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<h1 class="bottom-buffer">REGISTRO</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">Datos del donante</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<!--<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="control-label">Descripción<span></span>:</label>
+						<textarea class="form-control" placeholder="Objetivo de este material" rows="3"></textarea>
+					</div>
+				</div>
+			</div> -->
+
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label class="control-label">Los derechos sobre el material corresponden a una<span>*</span>:</label>
+						<select class="form-control" id="typePersona">
+						  <option>Selecciona</option>
+						  <option>Persona física</option>
+						  <option>Persona moral</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label">Nombre del donante<span>*</span>:</label>
+						<input class="form-control" placeholder="Nombre completo" type="text" id="donanteName">
+					</div>
+				</div>
+				<!--<div class="col-md-4">
+				</div>-->
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<label class="control-label">Teléfono del donante<span>*</span>:</label>
+					<input class="form-control" placeholder="Teléfono con clave" type="text" id="telDonante">
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<label class="control-label">Correo electrónico del responsable de la donación<span>*</span>:</label>
+					<input class="form-control" placeholder="ejemplo@ejemplo.com" type="text" id="emailDonante">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">Datos de la obra</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label class="control-label">Tipo de obra<span>*</span>:</label>
+						<select class="form-control" id="pieceType">
+						  <option value="0">Selecciona</option>
+						  <option value="1">Documento</option>
+						  <option value="2">Recurso multimedia</option>
+						  <option value="3">Sitio web referido</option>
+						  <option value="4">Otro</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6 col-xs-12" id="divotherpiece">
+					<label class="control-label">Otro<span>*</span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text" id="otherpiece" disabled="false">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección B) Tipo de documento</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Elija una opción de documento<span>*</span>:</label>
+						<select class="form-control" id="documentType">
+						  <option value="0">Selecciona</option>
+						  <option value="1">Artículo</option>
+						  <option value="2">Cartel</option>
+						  <option value="3">Curso</option>
+						  <option value="4">Documento de trabajo</option>
+						  <option value="5">Folleto</option>
+						  <option value="6">Gaceta</option>
+						  <option value="7">Guía</option>
+						  <option value="8">Historieta</option>
+						  <option value="9">Infografía</option>
+						  <option value="10">Libro</option>
+						  <option value="11">Manual</option>
+						  <option value="12">Memoria</option>
+						  <option value="13">Revista</option>
+						  <option value="14">Otra</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4" id="divdocumentType">
+					<label class="control-label">Otro tipo de documento<span>*</span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text" id="otherdocumenttype" disabled="true">
+				</div>
+				<div class="col-md-4">
+					<label class="control-label" data-toggle="tooltip" title="En caso de no contar con el número de registro escriba: Sin registro">Número ISBN o IISN<span></span>:</label>
+					<input class="form-control" placeholder="En caso de no contar con el número de registro escriba: Sin registro" type="text" data-toggle="tooltip" title="En caso de no contar con el número de registro escriba: Sin registro" id="isbn">
+				</div>
+			</div>
+				
+
+			<div class="row">
+				<div class="col-md-4">
+					<label class="control-label">Número de páginas<span></span>:</label>
+					<input class="form-control" placeholder="Ejemplo: 19" type="text" id="numpages">
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label" style="font-size: 17px;">¿Se trata de una publicación periódica?<span>*</span>:</label>
+						<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Sí</option>
+						  <option>No</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Especifique la periodicidad<span></span>:</label>
+						<select class="form-control" id="period">
+						  <option value="0">Selecciona</option>
+						  <option value="1">Diaria</option>
+						  <option value="2">Semanal</option>
+						  <option value="3">Mensual</option>
+						  <option value="4">Bimestral</option>
+						  <option value="5">Trimestral</option>
+						  <option value="6">Semestral</option>
+						  <option value="8">Anual</option>
+						  <option value="9">Bienal</option>
+						  <option value="10">Otra</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label class="control-label">Otra periodicidad<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text" disabled="true" id="otherpublish">
+				</div>
+				<div class="col-md-8">
+					<label class="control-label">Cantidad de número publicados durante el periodo que consigna<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text" id="cantpublish">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección C) Tipo de recurso multimedia</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Elija una opción de recurso multimedia<span>*</span>:</label>
+						<select class="form-control" id="multimediatype">
+						  <option>Selecciona</option>
+						  <option>Audio</option>
+						  <option>Interactivo</option>
+						  <option>Video</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<label class="control-label"  data-toggle="tooltip" title="Especifica si requiere algún codec o plugin en partícular, por ejemplo: adobe, flash, divx">Requerimientos de software para su correcto funcionamiento<span></span>:</label>
+					<input class="form-control" placeholder="Especifica si requiere algún codec o plugin en partícular, por ejemplo: adobe, flash, divx" type="text" data-toggle="tooltip" title="Especifica si requiere algún codec o plugin en partícular, por ejemplo: adobe, flash, divx" id="swrequeriment">
+				</div>
+				<div class="col-md-4">
+					<label class="control-label">Sistema Operativo con el que es compatible<span></span>:</label>
+					<input class="form-control" placeholder="Especifica" type="text" id="socompatible">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección D) Sitio web</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<label class="control-label">Indicar la URL<span></span>:</label>
+					<input class="form-control" placeholder="Dirección electrónica, ejemplo: http://sitio.com" type="text" id="urlweb">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección E) Características del material</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<label class="control-label">Título<span>*</span>:</label>
+					<input class="form-control" placeholder="Ingresa el título" type="text" id="title">
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Subtítulo<span></span>:</label>
+					<input class="form-control" placeholder="Ingresa el subtítulo" type="text" id="subtitle">
+				</div>
+			</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Autor<span></span>:</label>
+					<input class="form-control" placeholder="Ingresa el Autor" type="text" id="autor">
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Año de publicación o elaboración<span></span>:</label>
+					<input class="form-control" placeholder="Ingresa el año" type="text" id="publishdate">
+				</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="control-label">Idioma del material<span>*</span>:</label>
+						<select class="form-control" id="language">
+						  <option value="0">Selecciona</option>
+						  <option value="1">Español</option>
+						  <option value="2">Lengua indigena</option>
+						  <option value="3">Otro</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label">Otro idioma<span></span>:</label>
+					<input class="form-control" placeholder="Especifique la lengua o idioma" type="text" id="otherlanguage" disabled="true">
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label">¿Es una Coedición?<span>*</span>:</label>
+					<select class="form-control" id="coedition">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+				</div>
+				</div>
+				<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label">Especifique los coeditores<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text" id="coeditors">
+				</div>
+				</div>
+				<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label" data-toggle="tooltip" title="Por ejemplo: pdf, epub, doc, jpg, png. indicar si se  trata de un sitio web">Formato del archivo digital<span></span>:</label>
+					<input class="form-control" placeholder="Por ejemplo: pdf, epub, doc, jpg, png. indicar si se  trata de un sitio web" type="text" data-toggle="tooltip" title="Por ejemplo: pdf, epub, doc, jpg, png. indicar si se  trata de un sitio web" id="fileformat">
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label" data-toggle="tooltip" title="Indicar en MB (Megabytes). Omitir para sitios web">Tamaño del archivo<span></span>:</label>
+					<input class="form-control" placeholder="Indicar en MB (Megabytes). Omitir para sitios web" type="text" data-toggle="tooltip" title="Indicar en MB (Megabytes). Omitir para sitios web" id="filesize">
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Palabras clave o conceptos relacionados con la obra o sitio web<span>*</span></label>
+					<input class="form-control">
+				</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group"><br>
+					<label class="control-label"><span></span></label>
+					<input class="form-control">
+				</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group"><br>
+					<label class="control-label"><span></span></label>
+					<input class="form-control">
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<label class="control-label"><span></span></label>
+					<input class="form-control">
+				</div>
+				<div class="col-md-4">
+					<label class="control-label"><span></span></label>
+					<input class="form-control">
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Público objetivo<span>*</span>:</label>
+					<!--<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Padre y madres de familia o cuidadores</option>
+						  <option>Maestros de grupo</option>
+						  <option>Directores escolares</option>
+						  <option>Autoridades educativas</option>
+					</select>-->
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="radio-01" value="opcion-01" checked="checked"> Padre y madres de familia o cuidadores
+					  </label><br>
+					  <label>
+					    <input type="radio" name="radio-01" value="opcion-02" checked="checked"> Maestros de grupo
+					  </label>
+					  <label>
+					    <input type="radio" name="radio-01" value="opcion-03" checked="checked"> Directores escolares
+					  </label><br>
+					   <label>
+					    <input type="radio" name="radio-01" value="opcion-03" checked="checked"> Autoridades educativas
+					  </label>
+					</div>
+				</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Elija el rango de edad de los niños al cual está dirigido el material<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Cero a 3 años</option>
+						  <option>3 a 6 años</option>
+						  <option>6 a 9 años</option>
+						  <option>9 a 12 años</option>
+						  <option>12 a 15 años</option>
+						  <option>15 a 18 años</option>
+						  <option>No está dirigido a una edad específica</option>
+					</select>
+				</div>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Categorías</h3><br>
+					<div class="form-group">
+					<label class="control-label">Principalmente, el contenido de la obra...<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Orienta a los padres a participar en los órganos que existen en la escuela para ello</option> <!--[pase a la sección i] -->
+						  <option>Ofrece información u orientación a los padres de familia para apoyar de manera efectiva el desarrollo integral y pleno de sus hijos</option> <!--[pase a la sección ii] -->
+						  <option>Brinda información o herramientas para que madres, padres o cuidadores puedan apoyar a sus hijos para que tengan mejores resultados de aprendizaje</option> <!--[pase a la sección iii] -->
+						  <option>Presenta información para que directores o docentes promuevan la participación de la comunidad y padres de familia en la escuela</option><!--[pase a la sección iv] -->
+						  <option>Proporciona herramientas para que directores escolares o docentes puedan promover una relación positiva y de corresponsabilidad con los padres de familia, tutores o cuidadores de los niños</option><!--[pase a la sección v] -->
+					</select>
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección i) Corresponsabilidad y participación en la escuela</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="alert alert-warning"><strong>¡Sugerencia!</strong></div>			
+			<p>
+			En este eje agrupamos materiales que puedan orientar a los padres a participar en los órganos que existen en la escuela para ello. <br>
+			Bajo este rubro se clasifican materiales que incentiven la participación dinámica, colaborativa e incluyente de las familias en los proyectos escolares, en la gestión escolar y en temas de contraloría social. 
+			</p>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label class="control-label">Para este eje se han definido 8 sub­categorías temáticas. Elija la que mejor caracterice el contenido de la obra<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Participación en el Consejo Escolar de participación social y sus comités</option>
+						  <option>Participación para elaborar la planeación escolar de corto y mediano plazo</option>
+						  <option>Diseño, planeación y gestión de proyectos escolares comunitarios</option>
+						  <option>Instrumentos y herramientas para facilitar el trabajo participativo</option>
+						  <option>Actividades artísticas, recreativas y culturales en la escuela</option>
+						  <option>Participación social: buenas prácticas y experiencias de éxito</option>
+						  <option>Guías del Registro de Participación Social en la Educación, REPASE</option>
+						  <option>Programas federales y estatales que bajan recursos a las escuelas y sus reglas de operación</option>
+						  <option>Otro</option>
+					</select>
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Otro<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text">
+				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección ii) Prácticas de crianza</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="alert alert-warning"><strong>¡Sugerencia!</strong></div>
+			<p>
+				En el eje de prácticas de crianza agrupamos los materiales relacionados con la educación en casa. Materiales que ayuden a construir un ambiente familiar sano, de respeto, afecto y apoyo, en el que se fomente la escucha activa para conocer las necesidades e intereses de sus hijos. Preferimos contenidos que fomenten una educación familiar basada en el respeto, el amor, el cariño, las oportunidades, el apoyo emocional, y en desarrollar en los niños capacidades para conseguir lo que quieran y deseen a partir de valores, hábitos y actitudes positivas. 
+			</p>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label class="control-label">Para este eje se han definido 9 sub­categorías temáticas. Elija la que mejor caracterice el contenido de la obra<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Desarrollo de los niños por edades</option>
+						  <option>Autoestima y emociones en la familia</option>
+						  <option>Relaciones familiares</option>
+						  <option>Disciplina, reglas y límites</option>
+						  <option>Desarrollo de valores, habilidades sociales y de convivencia</option>
+						  <option>Salud y hábitos saludables</option>
+						  <option>Seguridad en el hogar</option>
+						  <option>Educación financiera</option>
+						  <option>Medios de comunicación y nuevas tecnologías</option>
+						  <option>Otro</option>
+					</select>
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Otro<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text">
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección iii) Apoyar a mi hija o hijo en el aprendizaje escolar</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="alert alert-warning"><strong>¡Sugerencia!</strong></div>
+			<p>
+				En este eje agrupamos materiales que orienten a los padres para trabajar de manera colaborativa con los docentes y a corresponsabilizarse de una manera más efectiva en actividades que fortalezcan los aprendizajes escolares de sus hijos desde el hogar. <br><br>
+				Consideramos, asimismo, contenidos que apoyen a los padres a inculcar en sus hijos hábitos de estudio y habilidades para aprender a lo largo de la vida; que les guíen en el desarrollo de relaciones positivas con los docentes y directores, basadas en el entendimiento y la cooperación. <br><br>
+				También incorporamos materiales sobre la importancia de brindar a los niños y jóvenes mejores condiciones para el aprovechamiento escolar, incluyendo una alimentación saludable y oportunidades de descanso. Sabemos que no todas las familias tienen las posibilidades económicas de lograr lo anterior, por ello incluimos información sobre los programas nacionales y locales de apoyo que pueden coadyuvar al cumplimiento de una mejor alimentación y la posibilidad de obtener becas para que los jóvenes puedan continuar con sus estudios. <br><br>
+				Además clasificamos aquí recursos que informen a los padres acerca de qué pueden esperar de la escuela, y que conozcan qué se entiende por normalidad mínima escolar y cómo puedan apoyar para su cumplimiento; también se ofrece orientación sobre cómo realizar trámites educativos. 
+			</p>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label class="control-label">Para este eje se han definido las siguientes sub­categorías temáticas. Elija la que mejor caracterice el contenido de la obra<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Derecho a la educación</option>
+						  <option>Programas de apoyo para la alimentación</option>
+						  <option>Programas de apoyo económico para la permanencia en la escuela</option>
+						  <option>Qué esperar de la escuela</option>
+						  <option>Relaciones padres­ docentes</option>
+						  <option>Desarrollo de hábitos de estudio positivos en los hijos</option>
+						  <option>Promoción de la lectura</option>
+						  <option>Apoyo en casa para hacer tareas</option>
+						  <option>Apoyo en casa para reforzar el aprendizaje</option>
+						  <option>Expectativas sobre los logros y la permanencia de los hijos en la escuela</option>
+						  <option>Utilizar los conocimientos escolares en la vida diaria</option>
+						  <option>Trámites escolares</option>
+						  <option>Normalidad mínima escolar</option>
+						  <option>Otro</option>
+					</select>
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Otro<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text">
+				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección iv) Materiales para directores y docentes</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="alert alert-warning"><strong>¡Sugerencia!</strong></div>
+			<p>
+				En este eje clasificamos recursos que ayuden a maestros, directores y autoridades educativas a implicar a las familias en la educación y a generar un trabajo conjunto, planificado y organizado entre padres y escuela. <br><br>
+				Buscamos apoyar a los directores y docentes con herramientas para que ellos puedan dar a conocer a los padres de familia y tutores las actividades y los propósitos educativos de la escuela, manteniendo una comunicación fluida y recíproca. Para que puedan orientar la participación de las familias en la realización de acciones para mejorar la calidad de los servicios educativos y de los procesos de enseñanza y de aprendizaje. Para que puedan crear espacios para el encuentro, para la coordinación y para el intercambio, que promuevan el debate y la toma colectiva de decisiones. Así como ambientes democráticos, de tolerancia, respeto a la diversidad y a la integridad física, psicológica y emocional de todos los actores del proceso. 
+			</p>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label class="control-label">Para este eje se han definido las siguientes sub­categorías temáticas. Elija la que mejor caracterice el contenido de la obra<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Gestionar la participación y la corresponsabilidad en la comunidad escolar</option>
+						  <option>Funciones del director escolar en el CEPS</option>
+						  <option>Planificación de las reuniones del Consejo Técnico Escolar y seguimiento de acuerdos</option>
+						  <option>Comunicar los objetivos de la escuela y su grado de avance durante el ciclo escolar</option>
+						  <option>Atención a las familias en el entorno escolar</option>
+						  <option>Diseñar, impulsar y gestionar proyectos con la comunidad</option>
+						  <option>Estrategias con padres, madres y cuidadores para promover el aprendizaje y el desarrollo integral de los niños</option>
+						  <option>Construcción de una cultura democrática de participación, tolerancia y respeto a la diversidad </option>
+						  <option>Otro</option>
+					</select>
+				</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Otro<span></span>:</label>
+					<input class="form-control" placeholder="Especifique" type="text">
+				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección v)Autorización para difundir el material a través de la biblioteca</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<div class="alert alert-warning"><strong>¡Sugerencia!</strong></div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+					<label class="control-label">Nombre del poseedor de los derechos sobre el material<span>*</span>:</label>
+					<input class="form-control" placeholder="Nombre completo" type="text">
+				</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="checkbox">
+						<p>De clic en la casilla para mostrar su acuerdo:</p>
+					  <label>
+					    <input type="checkbox" value="opcion-01" checked="checked"> Declaro que en calidad de poseedor de los derechos de autor del material objeto de esta ficha, doy mi consentimiento para que esta obra sea difundida por la Secretaría de Educación Pública mediante la Biblioteca Digital para padres de Familia.
+					  </label><br><br>
+					  <label>
+					    <input type="checkbox" value="opcion-01" checked="checked"> Declaro que cuento con las autorizaciones necesarias para utilizar las imágenes e información contenidos en la obra y deslindo a la Secretaría de Educación Pública de cualquier responsabilidad por el uso de este material.
+					  </label>
+					</div>
+					
+				</div>
+			</div>
+			<p>
+				La restricción de reproducción depende de la configuración del archivo digital del material donado, la plataforma solo puede restringir la descarga. Favor de entregar su archivo debidamente configurado.
+			</p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Autorización de descarga y reproducción del material en donación<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Es sólo para consultar en línea</option>
+						  <option>Se permite descargar, pero no reproducir</option>
+						  <option>Se permite descargar, copiar, imprimir o reproducir</option>
+					</select>
+				</div>
+				</div>
+			</div>
+		<!--	<div class="row">
+				<div class="col-md-12">
+					<h2 class="bottom-buffer">(Sección vi)Criterios de incorporación al acervo de la biblioteca digital</h2>
+					<hr class="red">
+				</div>
+			</div>
+			<p>
+				Para poder subir el material a la biblioteca debe garantizarse que cumpla COMPLETAMENTE con los siguientes criterios:
+			</p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Es de orientación general, para público no especializado<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Es apto para padres de familia, docentes, directores escolares o autoridades educativas<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Tiene un lenguaje apropiado y sencillo, adecuado para todo público<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Las imágenes que contiene son adecuadas para todo público<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Esta en español o en una lengua indígena que se habla en México<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Es laico y apolítico (No tiene orientación partidista ni religiosa)<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+					<label class="control-label">Está completo desde la primera hasta la última página, incluyendo la portada de cada obra o documento<span>*</span>:</label>
+					<select class="form-control">
+						  <option>Selecciona</option>
+						  <option>Si</option>
+						  <option>No</option>
+					</select>
+					</div>
+				</div>
+			</div>-->
+			<p>
+				Una vez enviado el cuestionario no es posible modificar la información, por favor revíselo antes de dar click en enviar.<br> 
+				<br>
+				
+			</p>
+			<div class="row">
+			<div class="col-md-12">
+				<div class="alert alert-warning">¡Sugerencia! Los formatos admitidos por el sistema son:
+				.avi ,.wav, .mp4, .docx, .doc, .pdf, .ppt, .pptx, .jpg, .png, .m4v, .wmv, .jpeg, .raw y .txt
+				Así como el peso máximo para cada archivo es de 8MB. </div>
+			</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<p>DOCUMENTOS</p>
+					<p>Anexo 1</p>
+					<p>Anexo 2</p>
+					<p>Anexo 3</p>
+					<p>Anexo 4</p>
+					<p>Anexo 5</p>
+				</div>
+				<div class="col-md-2">
+					<p>SI</p>
+					<p><input type="radio" name="radio-01" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-02" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-03" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-04" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-05" value="opcion-01" checked="checked"></p>
+				</div>
+				<div class="col-md-2">
+					<p>NO</p>
+					<p><input type="radio" name="radio-01" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-02" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-03" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-04" value="opcion-01" checked="checked"></p>
+					<p><input type="radio" name="radio-05" value="opcion-01" checked="checked"></p>
+				</div>
+				<div class="col-md-4">
+					<p>SELECCIONAR</p>
+					<p><input id="file-01" type="file"></p>
+					<p><input id="file-02" type="file"></p>
+					<p><input id="file-03" type="file"></p>
+					<p><input id="file-04" type="file"></p>
+					<p><input id="file-05" type="file"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-4">
+					<hr>
+				</div>
+			</div>
+			<div class="clearfix">
+				<div class="pull-left form-text text-vertical-align-button">* Campos obligatorios</div>
+				<div class="pull-right">
+					<button type="button" class="btn btn-danger">Cancelar</button>
+					<button type="button" class="btn btn-primary">Enviar</button>
+				</div>
+			</div>
+			<div class="bottom-buffer"></div>
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+			<div class="bottom-buffer"></div>
+		</div>
+
+<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/registro.js"></script>
+</main>
+</body>
+</html>
